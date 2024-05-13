@@ -1,0 +1,37 @@
+﻿@model List<Ticket>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <tr>
+                <th>
+                    TKNro Boleta
+                </th>
+                <th>
+                    Fecha de Ingreso
+                </th>
+                <th>
+                    Cliente
+                </th>
+                <th>
+                    Almacen
+                </th>
+                <th>
+                    Estado
+                </th>
+                
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    
+                    @* <td>
+                <a href="#" class="btn btn-outline-danger">
+                X
+                </a>
+                </td> *@
+                </tr>
+            }
+        </table>
+    </div>
+</div>

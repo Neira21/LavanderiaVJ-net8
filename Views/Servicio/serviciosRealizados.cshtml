@@ -1,0 +1,87 @@
+﻿@model List<Servicio>
+
+@* Titulo *@
+<h1 class="text-center">Reporte de servicios</h1>
+
+@* body *@
+<div class="container">
+    <form method="POST">
+        <div asp-validation-summary="All"></div>
+        <div class="row">
+            <div class="col">
+                <label id="fechainicial">Fecha Inicial:</label>
+                <input type="date" name="fechainicial" class="form-control" id="fechainicial">
+            </div>
+            <div class="col">
+                <label id="fechafinal">Fecha Final:</label>
+                <input type="date" name="fechafinal" class="form-control" id="fechafinal">
+            </div>
+        </div>
+        <div class="text-center mt-3 mb-3">
+            <input type="submit" value="Filtrar" class="btn btn-success">
+        </div>
+    </form>
+</div>
+
+<h5 class="text-center">@ViewBag.nombrefiltro</h5>
+<table class="table table-hover">
+    <thead class="thead-dark text-center">
+    <th>Servicios</th>
+    <th>Cantidad</th>
+    </thead>
+    <tbody>
+        @for (var i = 1; i <= 10; i++)
+        {
+            var tipoServicio = i;
+            var count = 0;
+            @if (Model.Where(x => x.serviciosDisponibles.Id == tipoServicio).FirstOrDefault() != null)
+            {
+                <tr class="text-center">
+                    <td>
+                        @Model.Where(x => x.serviciosDisponibles.Id == tipoServicio).FirstOrDefault().serviciosDisponibles.NombreSer
+                    </td>
+
+                    @foreach (var item in Model.Where(x => x.serviciosDisponiblesId == tipoServicio))
+                    {
+                        count++;
+                    }
+                    <td>
+                        @count
+                    </td>
+                </tr>
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        @* @foreach (var servicio in Model)
+        {
+        <tr class="text-center">
+        <td>
+        @servicio.serviciosDisponibles.NomServ
+        </td>
+        <td>
+        1
+        </td>
+        </tr>
+
+        } *@
+        <tr class="text-light bg-dark text-center">
+            <td>Servicio</td>
+            <td>Cantidad</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<a style="text-align: center;" class="btn btn-warning" href="/Home/Index">Volver</a>

@@ -1,0 +1,34 @@
+﻿@model ServiciosDisponibles
+
+<div class="container">
+        <form method="post">
+            <div class="border p-3 mt-4">
+                <div class="row pb-2">
+                    <h1>Crear nuevo Servicio</h1>
+                    <hr />
+                </div>
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="NombreSer"></label>
+                    <input asp-for="NombreSer" type="text" class="form-control" name="NombreSer" />
+                    <span asp-validation-for="NombreSer" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control" >Crear</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Class" asp-action="Index" class="btn btn-secondary form-control">Cancelar</a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
