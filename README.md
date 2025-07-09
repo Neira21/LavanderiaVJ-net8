@@ -18,3 +18,25 @@
 - Diseños Responsives
 - Entity Framework
 - SQL Server
+
+
+---
+
+# ✨ Pantallas
+
+- Listar Servicios
+<img src="./design/ListarServicio.png" alt="Pantalla de inicio">
+- Registrar Servicios
+<img src="./design/RegistrarServicios.png" alt="Pantalla de inicio">
+- Reporte de Servicios
+
+<img src="./design/ReporteServicios.png" alt="Pantalla de inicio">
+
+- Servicios Pendientes
+<img src="./design/ServiciosPendientes.png" alt="Pantalla de inicio">
+
+
+
+
+
+
